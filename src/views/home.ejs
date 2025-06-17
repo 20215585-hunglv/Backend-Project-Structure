@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/vbee">VBee</a>
+        <a href="/create-user-page">Create User</a>
+    </div>
+    <div class="table-container">
+        <div>
+            <h1>list user</h1>
+        </div>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>email</th>
+                <th>name</th>
+                <th>city</th>
+                <th>action</th>
+            </tr>
+            <% users.forEach(function(user) { %>
+
+                <tr>
+                    <td>
+                        <%= user.user_id%>
+                    </td>
+                    <td>
+                        <%= user.email%>
+                    </td>
+                    <td>
+                        <%= user.name%>
+                    </td>
+                    <td>
+                        <%= user.city%>
+                    </td>
+                    <td>
+                        <a>edit</a>
+                        <button>delete</button>
+                    </td>
+                </tr>
+                <% }); %>
+        </table>
+    </div>
+
+</body>
+
+</html>
